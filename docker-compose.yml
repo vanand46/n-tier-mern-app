@@ -1,4 +1,4 @@
-version: '1'
+version: '2'
 services:
   mongo:
     image: mongo:latest
@@ -6,7 +6,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./mongo-data:/data/db
+      - ./mount/mongo:/data/db
 
   backend:
     build: ./back-end
@@ -19,7 +19,7 @@ services:
     depends_on:
       - mongo  
     volumes:
-      - ./back-end:/usr/src/app    
+      - ./mount/be:/usr/src/app    
 
   frontend:
     build: ./front-end
@@ -29,7 +29,4 @@ services:
     depends_on:
       - backend
     volumes:
-      - ./front-end:/app
-
-volumes:
-  mongo-data:    
+      - ./mount/fe:/app
