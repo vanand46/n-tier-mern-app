@@ -1,2 +1,2 @@
-# n-tier-mern-app
-An example of how to develop  n-tier apps using MERN
+# N-Tier MERN App
+An example of developing n-tier applications using the MERN stack
