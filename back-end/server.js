@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 
 mongoose
-  .connect("mongodb://localhost:27017/mern_db", {})
+  .connect("mongodb://mongo:27017/mern_db", {})
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -36,7 +36,7 @@ app.get("/api/todos", async (req, res) => {
   res.json(todos);
 });
 
-app.post("api/todos", async (req, res) => {
+app.post("/api/todos", async (req, res) => {
   const todo = new ToDo({
     task: req.body.task,
   });

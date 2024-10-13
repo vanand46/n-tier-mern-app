@@ -19,7 +19,7 @@ services:
     depends_on:
       - mongo  
     volumes:
-      - ./mount/be:/usr/src/app    
+      - ./mount/be:/tmp/data    
 
   frontend:
     build: ./front-end
